@@ -1,4 +1,4 @@
-{% set version = "1.1.11.20240222" %}
+{% set version = "1.1.11.20240228" %}
 
 package:
   name: types-html5lib
@@ -6,7 +6,7 @@ package:
 
 source:
   - url: https://pypi.io/packages/source/t/types-html5lib/types-html5lib-{{ version }}.tar.gz
-    sha256: d9517ec6ba2fa1f63113e2930a59b60722a976cc983b94d7fd772f14865e1152
+    sha256: 22736b7299e605ec4ba539d48691e905fd0c61c3ea610acc59922232dc84cede
   - url: https://raw.githubusercontent.com/python/typeshed/main/LICENSE
     sha256: 295f8538c94ae5c3043301cf7cff1c852dab6a786a8ddee471e061b40d5ecabe
 
