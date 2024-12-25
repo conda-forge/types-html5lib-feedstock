@@ -5,31 +5,33 @@ package:
   version: {{ version }}
 
 source:
-  - url: https://pypi.io/packages/source/t/types-html5lib/types-html5lib-{{ version }}.tar.gz
+  - url: https://pypi.org/packages/source/t/types-html5lib/types-html5lib-{{ version }}.tar.gz
     sha256: 98042555ff78d9e3a51c77c918b1041acbb7eb6c405408d8a9e150ff5beccafa
   - url: https://raw.githubusercontent.com/python/typeshed/main/LICENSE
     sha256: 295f8538c94ae5c3043301cf7cff1c852dab6a786a8ddee471e061b40d5ecabe
 
 build:
   noarch: python
-  number: 0
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 1
+  script:
+    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
 
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python {{ python_min }}
     - setuptools
   run:
-    - python >=3.7
+    - python >={{ python_min }}
 
 test:
+  requires:
+    - pip
+    - python {{ python_min }}
   commands:
     - pip check
     - test -f $SP_DIR/html5lib-stubs/__init__.pyi                 # [unix]
     - if not exist %SP_DIR%\\html5lib-stubs\\__init__.pyi exit 1  # [win]
-  requires:
-    - pip
 
 about:
   home: https://github.com/python/typeshed
