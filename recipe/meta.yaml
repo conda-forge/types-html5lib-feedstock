@@ -1,18 +1,18 @@
-{% set version = "1.1.11.20241018" %}
+{% set version = "1.1.11.20250516" %}
 
 package:
   name: types-html5lib
   version: {{ version }}
 
 source:
-  - url: https://pypi.org/packages/source/t/types-html5lib/types-html5lib-{{ version }}.tar.gz
-    sha256: 98042555ff78d9e3a51c77c918b1041acbb7eb6c405408d8a9e150ff5beccafa
+  - url: https://pypi.org/packages/source/t/types-html5lib/types_html5lib-{{ version }}.tar.gz
+    sha256: 65043a6718c97f7d52567cc0cdf41efbfc33b1f92c6c0c5e19f60a7ec69ae720
   - url: https://raw.githubusercontent.com/python/typeshed/main/LICENSE
     sha256: 295f8538c94ae5c3043301cf7cff1c852dab6a786a8ddee471e061b40d5ecabe
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script:
     - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
 
