@@ -30,13 +30,13 @@ requirements:
 tests:
   - package_contents:
       files:
+        - site-packages/html5lib-stubs/*.pyi
         - site-packages/html5lib-stubs/__init__.pyi
   - requirements:
       run:
         - pip
-        - python ${{ python_min }}
-    script:
-      - pip check
+        - python ${{ python_min }}.*
+    script: pip check
 
 about:
   summary: Typing stubs for html5lib
