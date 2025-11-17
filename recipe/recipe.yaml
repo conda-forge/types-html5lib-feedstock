@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "1.1.11.20251115"
+  version: "1.1.11.20251117"
 
 package:
   name: types-html5lib
@@ -10,7 +10,7 @@ package:
 
 source:
   - url: https://pypi.org/packages/source/t/types-html5lib/types_html5lib-${{ version }}.tar.gz
-    sha256: a4b666a06e496d7b2a9489dc9206f09a249fab7c62865ac6024cec24628b15d3
+    sha256: 1a6a3ac5394aa12bf547fae5d5eff91dceec46b6d07c4367d9b39a37f42f201a
 
 build:
   number: 0
